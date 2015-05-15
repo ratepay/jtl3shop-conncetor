@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding="ISO-8859-1"?>
+<jtlshop3plugin>
+    <Name>RatePAY</Name>
+    <Description>Anbindung der RatePAY Payment Page</Description>
+    <Author>RatePAY GmbH</Author>
+    <URL>https://www.ratepay.com</URL>
+    <XMLVersion>100</XMLVersion>
+    <ShopVersion>300</ShopVersion>
+    <PluginID>RatePAY_RatepayPayment</PluginID>
+    <Install>
+        <Version nr="100">
+            <CreateDate>2015-04-14</CreateDate>
+        </Version>
+
+        <Hooks>
+            <Hook id="8">availability.php</Hook>
+        </Hooks>
+
+        <PaymentMethod>
+            <Method>
+                <Name>RatePAY</Name>
+                <PictureURL>ratepaypayment/template/ratepay_logo.png</PictureURL>
+                <Sort>0</Sort>
+                <SendMail>0</SendMail>
+                <Provider>RatePAY GmbH</Provider>
+                <TSCode>OTHER</TSCode>
+                <PreOrder>0</PreOrder>
+                <Soap>0</Soap>
+                <Curl>1</Curl>
+                <Sockets>0</Sockets>
+                <ClassFile>ratepaypayment/ratepay.class.php</ClassFile>
+                <ClassName>Ratepay</ClassName>
+                <TemplateFile>ratepaypayment/template/bestellabschluss.tpl</TemplateFile>
+                <MethodLanguage iso="GER">
+                    <Name>RatePAY</Name>
+                    <ChargeName>RatePAY</ChargeName>
+                    <InfoText>Bei Zahlung mit RatePAY stehen Ihnen nach Kaufabschluss die Zahlungsarten Rechnung, Lastschrift und Ratenzahlung zur Verfügung.</InfoText>
+                </MethodLanguage>
+                <MethodLanguage iso="ENG">
+                    <Name>RatePAY</Name>
+                    <ChargeName>RatePAY</ChargeName>
+                    <InfoText>Bei Zahlung mit RatePAY stehen Ihnen nach Kaufabschluss die Zahlungsarten Rechnung, Lastschrift und Ratenzahlung zur Verfügung.</InfoText>
+                </MethodLanguage>
+
+                <Setting type="text" initialValue="" sort="1" conf="Y">
+                    <Name>Profile Id</Name>
+                    <Description>Profile Id</Description>
+                    <ValueName>profile_id</ValueName>
+                </Setting>
+                <Setting type="text" initialValue="" sort="2" conf="Y">
+                    <Name>Security Code</Name>
+                    <Description>Security Code</Description>
+                    <ValueName>security_code</ValueName>
+                </Setting>
+                <Setting type="selectbox" initialValue="1" sort="3" conf="Y">
+                    <Name>Sandbox</Name>
+                    <Description>Testmodus</Description>
+                    <ValueName>sandbox</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="0" sort="4" conf="Y">
+                    <Name>Abweichende Lieferadresse</Name>
+                    <Description>Abweichende Lieferadresse</Description>
+                    <ValueName>ala</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="0" sort="5" conf="Y">
+                    <Name>B2B</Name>
+                    <Description>B2B</Description>
+                    <ValueName>b2b</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="0" sort="6" conf="Y">
+                    <Name>Editierbar</Name>
+                    <Description>Editierbar</Description>
+                    <ValueName>editable</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+                <Setting type="selectbox" initialValue="1" sort="7" conf="Y">
+                    <Name>Warenkorb auf PayPage</Name>
+                    <Description>Vollständigen Warenkorb auf Payment Page anzeigen</Description>
+                    <ValueName>basketitems</ValueName>
+                    <SelectboxOptions>
+                        <Option value="1" sort="1">Ja</Option>
+                        <Option value="0" sort="2">Nein</Option>
+                    </SelectboxOptions>
+                </Setting>
+
+            </Method>
+        </PaymentMethod>
+    </Install>
+</jtlshop3plugin>
